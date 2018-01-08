@@ -31,9 +31,10 @@ public class Exercise_02_08 {
 		// Obtain the total hours
 		long totalHours = totalMinutes / 60;
 
-		// Compute the current hour
-		long currentHour = totalHours % 24;
-		currentHour = currentHour + offset;
+		// Compute the current hour and display non-negative value (12-hour time)
+		long currentHour = (totalHours % 24) + offset;
+			if(currentHour <= 0)
+				currentHour = 12 + currentHour;
 
 		// Display results
 		System.out.println("Current time is " + currentHour + ":"
